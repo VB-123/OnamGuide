@@ -1,43 +1,30 @@
 <script setup>
-  const img1 = import('@/assets/images.jpeg');
-  const img2 = import('@/assets/celeb.jpeg');
-  const img3 = import('@/assets/temple.jpeg');
-  const img4 = import('@/assets/pookalam.jpeg');
+import { ref } from 'vue';
 
+const img1 = new URL('@/assets/images.jpeg', import.meta.url).href;
+const img2 = new URL('@/assets/celeb.jpeg', import.meta.url).href;
+const img3 = new URL('@/assets/temple.jpeg', import.meta.url).href;
+const img4 = new URL('@/assets/pookalam.jpeg', import.meta.url).href;
+
+const festivalHighlights = ref([
+  { title: 'Festival of Harvest', description: 'Celebrated in Kerala', image: img1 },
+  { title: 'Joyous Celebrations', description: 'Feasting, boat races', image: img2 },
+  { title: 'Music and Dance', description: 'Performances in temples', image: img3 },
+  { title: 'Floral Designs', description: 'Pookalam adorns floors', image: img4 }
+]);
 </script>
+
 <template>
   <div class="festival-highlights">
     <div v-for="highlight in festivalHighlights" :key="highlight.title" class="highlight-card">
       <div class="highlight-image" :style="{ backgroundImage: `url(${highlight.image})` }"></div>
       <div>
-        <p class="highlight-title" >{{ highlight.title }}</p>
+        <p class="highlight-title">{{ highlight.title }}</p>
         <p class="highlight-description">{{ highlight.description }}</p>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'FestivalHighlights',
-  props: {
-    highlights: {
-      type: Array,
-      required: true
-    }
-  },
-  data(){
-    return{
-      festivalHighlights:[
-        { title: 'Festival of Harvest', description: 'Celebrated in Kerala', image: img1 },
-        { title: 'Joyous Celebrations', description: 'Feasting, boat races', image: img2 },
-        { title: 'Music and Dance', description: 'Performances in temples', image: img3 },
-        { title: 'Floral Designs', description: 'Pookalam adorns floors', image: img4 }
-      ]
-    }
-  }
-}
-</script>
 
 <style scoped>
 .festival-highlights {
