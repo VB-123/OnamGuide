@@ -25,22 +25,22 @@ export default {
       currentIndex: 0,
       carouselItems: [
         {
-          image: './src/assets/carousel1.jpeg',
+          image: '@/assets/carousel1.jpeg',
           title: 'The essence of Onam',
           description: 'Onam, is the festival, that lights up many hoouseholds in kerala.',
         },
         {
-          image: './src/assets/carousel2.jpeg',
+          image: '@/assets/carousel2.jpeg',
           title: 'Onam,touches each and every life in kerala.',
           description: 'From the poor to the rich, all people cherish and share the joy on this day.',
         },
         {
-          image: './src/assets/carousel3.jpeg',
+          image: '@/assets/carousel3.jpeg',
           title: 'The winds on the shores, come alive!',
           description: 'The beauty of nature comes to life with the festivities in the city!',
         },
         {
-          image: './src/assets/carousel4.jpeg',
+          image: '@/assets/carousel4.jpeg',
           title: 'It\'s Onam Time!',
           description: 'Brace yourselves, this festive season!',
         },
