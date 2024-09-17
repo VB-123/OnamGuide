@@ -29,10 +29,10 @@ export default {
   data(){
     return{
       festivalHighlights:[
-        { title: 'Festival of Harvest', description: 'Celebrated in Kerala', image: '@/assets/images.jpeg' },
-        { title: 'Joyous Celebrations', description: 'Feasting, boat races', image: '@/assets/celeb.jpeg' },
-        { title: 'Music and Dance', description: 'Performances in temples', image: '@/assets/temple.jpeg' },
-        { title: 'Floral Designs', description: 'Pookalam adorns floors', image: '@/assets/pookalam.jpeg' }
+        { title: 'Festival of Harvest', description: 'Celebrated in Kerala', image: img1 },
+        { title: 'Joyous Celebrations', description: 'Feasting, boat races', image: img2 },
+        { title: 'Music and Dance', description: 'Performances in temples', image: img3 },
+        { title: 'Floral Designs', description: 'Pookalam adorns floors', image: img4 }
       ]
     }
   }
