@@ -1,3 +1,10 @@
+<script setup>
+  const img1 = import('@/assets/images.jpeg');
+  const img2 = import('@/assets/celeb.jpeg');
+  const img3 = import('@/assets/temple.jpeg');
+  const img4 = import('@/assets/pookalam.jpeg');
+
+</script>
 <template>
   <div class="festival-highlights">
     <div v-for="highlight in festivalHighlights" :key="highlight.title" class="highlight-card">
