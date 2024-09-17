@@ -1,3 +1,44 @@
+<script setup>
+import { ref } from 'vue';
+
+const carousel1 = new URL('@/assets/carousel1.jpeg', import.meta.url).href;
+const carousel2 = new URL('@/assets/carousel2.jpeg', import.meta.url).href;
+const carousel3 = new URL('@/assets/carousel3.jpeg', import.meta.url).href;
+const carousel4 = new URL('@/assets/carousel4.jpeg', import.meta.url).href;
+
+const currentIndex = ref(0);
+const carouselItems = ref([
+  {
+    image: carousel1,
+    title: 'The essence of Onam',
+    description: 'Onam, is the festival, that lights up many households in Kerala.',
+  },
+  {
+    image: carousel2,
+    title: 'Onam touches each and every life in Kerala',
+    description: 'From the poor to the rich, all people cherish and share the joy on this day.',
+  },
+  {
+    image: carousel3,
+    title: 'The winds on the shores, come alive!',
+    description: 'The beauty of nature comes to life with the festivities in the city!',
+  },
+  {
+    image: carousel4,
+    title: 'It\'s Onam Time!',
+    description: 'Brace yourselves, this festive season!',
+  },
+]);
+
+const nextSlide = () => {
+  currentIndex.value = (currentIndex.value + 1) % carouselItems.value.length;
+};
+
+const prevSlide = () => {
+  currentIndex.value = (currentIndex.value - 1 + carouselItems.value.length) % carouselItems.value.length;
+};
+</script>
+
 <template>
   <div class="carousel-container">
     <h2>Image Gallery</h2>
@@ -16,47 +57,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'ImageCarousel',
-  data() {
-    return {
-      currentIndex: 0,
-      carouselItems: [
-        {
-          image: '@/assets/carousel1.jpeg',
-          title: 'The essence of Onam',
-          description: 'Onam, is the festival, that lights up many hoouseholds in kerala.',
-        },
-        {
-          image: '@/assets/carousel2.jpeg',
-          title: 'Onam,touches each and every life in kerala.',
-          description: 'From the poor to the rich, all people cherish and share the joy on this day.',
-        },
-        {
-          image: '@/assets/carousel3.jpeg',
-          title: 'The winds on the shores, come alive!',
-          description: 'The beauty of nature comes to life with the festivities in the city!',
-        },
-        {
-          image: '@/assets/carousel4.jpeg',
-          title: 'It\'s Onam Time!',
-          description: 'Brace yourselves, this festive season!',
-        },
-      ],
-    };
-  },
-  methods: {
-    nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.carouselItems.length;
-    },
-    prevSlide() {
-      this.currentIndex = (this.currentIndex - 1 + this.carouselItems.length) % this.carouselItems.length;
-    },
-  },
-};
-</script>
 
 <style scoped>
 h2 {
